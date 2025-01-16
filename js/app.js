@@ -168,7 +168,6 @@ class ChessPatterns {
         if (this.moveIndex >= this.currentOpening.sequence.length) {
             setTimeout(() => {
                 alert('Opening complete! Select another opening to continue learning.');
-                this.resetApp();
             }, 500);
             return;
         }
