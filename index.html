@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Patterns - Learn Openings Visually</title>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Chess Patterns</h1>
+        </header>
+
+        <main>
+            <div class="app-container">
+                <div class="opening-selector">
+                    <div class="opening-categories">
+                        <button class="category-btn active" data-category="Basic">Basic</button>
+                        <button class="category-btn" data-category="Advanced">Advanced</button>
+                        <button class="category-btn" data-category="Gambit">Gambits</button>
+                    </div>
+                    <select id="opening-select">
+                        <option value="">Select an opening...</option>
+                    </select>
+                </div>
+
+                <div id="board-section" class="board-container hidden">
+                    <div class="move-info">
+                        <div class="move-label"></div>
+                        <div class="move-explanation"></div>
+                    </div>
+                    <div id="learning-board" class="chess-board"></div>
+                    <div class="move-controls">
+                        <button id="undo-btn" class="arrow-btn">←</button>
+                        <div class="progress">Move <span id="current-move">1</span> of <span id="total-moves">4</span></div>
+                        <button id="next-move" class="arrow-btn">→</button>
+                    </div>
+                    <div class="opening-details">
+                        <div class="common-traps">
+                            <h4>Common Traps</h4>
+                            <ul class="traps-list"></ul>
+                        </div>
+                        <div class="typical-plans">
+                            <h4>Typical Plans</h4>
+                            <ul class="plans-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/openings.js"></script>
+    <script src="js/openings/basic.js"></script>
+    <script src="js/openings/gambits.js"></script>
+    <script src="js/openings/advanced.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 

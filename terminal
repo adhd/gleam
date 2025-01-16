@@ -1,0 +1,19 @@
+# Create project structure
+mkdir chess-patterns
+cd chess-patterns
+mkdir css js assets
+
+# Create the SVG files first
+cd assets
+touch create_pieces.sh
+chmod +x create_pieces.sh
+# Copy the create_pieces.sh content and run it
+./create_pieces.sh
+cd ..
+
+# Create the other files
+touch index.html
+touch css/styles.css 
+touch js/openings.js
+touch js/board.js
+touch js/app.js 
