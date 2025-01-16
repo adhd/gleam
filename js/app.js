@@ -15,6 +15,7 @@ class ChessPatterns {
     init() {
         this.setupEventListeners();
         this.updateOpeningsList();
+        this.setupThemeToggle();
     }
 
     setupEventListeners() {
@@ -224,6 +225,28 @@ class ChessPatterns {
         // Clear the instruction and explanation
         document.querySelector('.move-label').textContent = '';
         document.querySelector('.move-explanation').textContent = '';
+    }
+
+    setupThemeToggle() {
+        const toggle = document.getElementById('theme-toggle');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        // Set initial theme based on system preference
+        if (prefersDark) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            toggle.textContent = '☀️';
+        }
+
+        toggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                toggle.textContent = '🌙';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                toggle.textContent = '☀️';
+            }
+        });
     }
 }
 
